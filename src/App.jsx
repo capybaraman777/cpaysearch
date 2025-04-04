@@ -1,75 +1,26 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import { FaShoppingCart, FaMinus, FaPlus } from 'react-icons/fa'
+import productsData from './products.json'
 
 function App() {
   // 商品數據
-  const [products, setProducts] = useState([
-    { 
-      id: 1, 
-      name: '筆記型電腦', 
-      price: 30000, 
-      image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80',
-      description: '高效能商務筆電，搭載最新處理器和高解析度螢幕',
-      rating: 4.8
-    },
-    { 
-      id: 2, 
-      name: '智能手機', 
-      price: 15000, 
-      image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80',
-      description: '最新旗艦智能手機，配備高畫質相機和長效電池',
-      rating: 4.7
-    },
-    { 
-      id: 3, 
-      name: '無線耳機', 
-      price: 2000, 
-      image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-      description: '高音質無線耳機，具備主動降噪功能和長效電池',
-      rating: 4.5
-    },
-    { 
-      id: 4, 
-      name: '無線滑鼠', 
-      price: 800, 
-      image: 'https://images.unsplash.com/photo-1605773527852-c546a8584ea3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
-      description: '人體工學設計無線滑鼠，精準定位和舒適握感',
-      rating: 4.3
-    },
-    { 
-      id: 5, 
-      name: '機械鍵盤', 
-      price: 1200, 
-      image: 'https://images.unsplash.com/photo-1595225476474-57ff36594559?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80',
-      description: 'RGB背光機械鍵盤，提供絕佳打字體驗和遊戲性能',
-      rating: 4.6
-    },
-    { 
-      id: 6, 
-      name: '曲面顯示器', 
-      price: 8000, 
-      image: 'https://images.unsplash.com/photo-1616763355548-1b606f439f86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-      description: '27吋曲面顯示器，高刷新率和廣色域，適合專業設計和遊戲',
-      rating: 4.9
-    },
-    { 
-      id: 7, 
-      name: '智能手錶', 
-      price: 5500, 
-      image: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80',
-      description: '多功能智能手錶，支援健康監測和運動追蹤',
-      rating: 4.4
-    },
-    { 
-      id: 8, 
-      name: '藍牙音箱', 
-      price: 1800, 
-      image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1036&q=80',
-      description: '便攜式防水藍牙音箱，音質清晰且電池續航力強',
-      rating: 4.2
+  const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  
+  // 使用useEffect從JSON文件加載數據
+  useEffect(() => {
+    try {
+      // 直接從導入的JSON文件設置商品數據
+      setProducts(productsData)
+      setLoading(false)
+    } catch (err) {
+      console.error('加載商品數據時出錯:', err)
+      setError('無法加載商品數據，請稍後再試。')
+      setLoading(false)
     }
-  ])
+  }, []) // 空依賴數組表示僅在組件掛載時執行一次
 
   // 購物車數據
   const [cart, setCart] = useState([])
