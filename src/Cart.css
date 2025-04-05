@@ -1,226 +1,253 @@
-/* 購物車樣式 */
+/* 購物車樣式 - 整體容器設定 */
 .cart-container {
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  height: fit-content;
-  position: sticky;
-  top: 20px;
-  right: 0;
-  z-index: 100;
+  background-color: #f9f9f9; /* 淺灰色背景 */
+  border-radius: 12px; /* 圓角邊框 */
+  padding: 20px; /* 內部間距 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* 輕微陰影效果 */
+  height: fit-content; /* 高度自適應內容 */
+  position: sticky; /* 固定位置，但可隨頁面滾動 */
+  top: 20px; /* 距離頂部20px */
+  right: 0; /* 靠右對齊 */
+  z-index: 100; /* 確保在其他元素上方 */
 }
 
+/* 購物車頭部區域樣式 */
 .cart-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  position: relative;
+  display: flex; /* 彈性布局 */
+  align-items: center; /* 垂直居中對齊 */
+  margin-bottom: 15px; /* 底部間距 */
+  position: relative; /* 相對定位，用於關閉按鈕定位 */
 }
 
+/* 購物車圖標樣式 */
 .cart-icon {
-  font-size: 1.5rem;
-  color: #646cff;
-  margin-right: 10px;
+  font-size: 1.5rem; /* 圖標大小 */
+  color: #646cff; /* 主題藍色 */
+  margin-right: 10px; /* 右側間距 */
 }
 
+/* 購物車標題樣式 */
 .cart-container h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0;
-  color: #2c3e50;
-  text-align: left;
-  font-weight: 600;
+  font-size: 1.5rem; /* 字體大小 */
+  margin-bottom: 0; /* 移除底部間距 */
+  color: #2c3e50; /* 深色文字 */
+  text-align: left; /* 左對齊 */
+  font-weight: 600; /* 字體粗細 */
 }
 
+/* 購物車關閉按鈕樣式 */
 .cart-close-btn {
-  position: absolute;
-  right: 0;
-  top: 0;
-  background: none;
-  border: none;
-  color: #666;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 5px;
-  transition: color 0.3s ease;
+  position: absolute; /* 絕對定位 */
+  right: 0; /* 靠右對齊 */
+  top: 0; /* 靠頂對齊 */
+  background: none; /* 無背景 */
+  border: none; /* 無邊框 */
+  color: #666; /* 灰色文字 */
+  font-size: 1.2rem; /* 字體大小 */
+  cursor: pointer; /* 鼠標指針變為手型 */
+  padding: 5px; /* 內部間距 */
+  transition: color 0.3s ease; /* 顏色過渡效果 */
 }
 
+/* 購物車關閉按鈕懸停效果 */
 .cart-close-btn:hover {
-  color: #646cff;
+  color: #646cff; /* 懸停時變為主題藍色 */
 }
 
+/* 購物車切換按鈕樣式 - 用於移動端顯示/隱藏購物車 */
 .cart-toggle-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #646cff;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  z-index: 1000;
-  font-size: 1.5rem;
+  position: fixed; /* 固定在視窗中 */
+  bottom: 20px; /* 距離底部20px */
+  right: 20px; /* 距離右側20px */
+  width: 50px; /* 寬度 */
+  height: 50px; /* 高度 */
+  border-radius: 50%; /* 圓形按鈕 */
+  background-color: #646cff; /* 主題藍色背景 */
+  color: white; /* 白色文字 */
+  display: flex; /* 彈性布局 */
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  cursor: pointer; /* 鼠標指針變為手型 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 陰影效果 */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* 變換和背景色過渡效果 */
+  z-index: 1000; /* 確保在最上層 */
+  font-size: 1.5rem; /* 字體大小 */
 }
 
+/* 購物車切換按鈕懸停效果 */
 .cart-toggle-button:hover {
-  transform: scale(1.05);
-  background-color: #535bf2;
+  transform: scale(1.05); /* 輕微放大效果 */
+  background-color: #535bf2; /* 深一點的藍色 */
 }
 
+/* 購物車數量徽章樣式 */
 .cart-badge {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: #ff4757;
-  color: white;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  font-weight: bold;
+  position: absolute; /* 絕對定位 */
+  top: -5px; /* 上方偏移 */
+  right: -5px; /* 右側偏移 */
+  background-color: #ff4757; /* 紅色背景 */
+  color: white; /* 白色文字 */
+  border-radius: 50%; /* 圓形徽章 */
+  width: 20px; /* 寬度 */
+  height: 20px; /* 高度 */
+  display: flex; /* 彈性布局 */
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  font-size: 0.8rem; /* 字體大小 */
+  font-weight: bold; /* 粗體 */
 }
 
+/* 購物車商品列表樣式 */
 .cart-items {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  list-style: none; /* 移除列表樣式 */
+  padding: 0; /* 移除內部間距 */
+  margin: 0; /* 移除外部間距 */
 }
 
+/* 購物車單個商品項目樣式 */
 .cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid #e0e0e0;
+  display: flex; /* 彈性布局 */
+  justify-content: space-between; /* 兩端對齊 */
+  align-items: center; /* 垂直居中 */
+  padding: 10px 0; /* 上下內部間距 */
+  border-bottom: 1px solid #e0e0e0; /* 底部邊框 */
 }
 
+/* 購物車商品圖片容器樣式 */
 .cart-item-image {
-  width: 70px;
-  height: 70px;
-  margin-right: 10px;
-  border-radius: 5px;
-  overflow: hidden;
-  flex-shrink: 0;
+  width: 70px; /* 寬度 */
+  height: 70px; /* 高度 */
+  margin-right: 10px; /* 右側間距 */
+  border-radius: 5px; /* 圓角 */
+  overflow: hidden; /* 隱藏溢出部分 */
+  flex-shrink: 0; /* 防止圖片被壓縮 */
 }
 
+/* 購物車商品圖片樣式 */
 .cart-item-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100%; /* 寬度填滿容器 */
+  height: 100%; /* 高度填滿容器 */
+  object-fit: cover; /* 保持圖片比例並填滿容器 */
 }
 
+/* 購物車商品信息樣式 */
 .cart-item-info {
-  flex-grow: 1;
-  margin-right: 10px;
+  flex-grow: 1; /* 佔據剩餘空間 */
+  margin-right: 10px; /* 右側間距 */
 }
 
+/* 購物車商品標題樣式 */
 .cart-item-info h3 {
-  margin: 0;
-  font-size: 1rem;
-  color: #2c3e50;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin: 0; /* 移除外部間距 */
+  font-size: 1rem; /* 字體大小 */
+  color: #2c3e50; /* 深色文字 */
+  white-space: nowrap; /* 不換行 */
+  overflow: hidden; /* 隱藏溢出部分 */
+  text-overflow: ellipsis; /* 溢出顯示省略號 */
 }
 
+/* 購物車商品價格樣式 */
 .cart-item-info p {
-  margin: 5px 0 0;
-  font-size: 0.9rem;
-  color: #646cff;
+  margin: 5px 0 0; /* 上方間距 */
+  font-size: 0.9rem; /* 字體大小 */
+  color: #646cff; /* 主題藍色 */
 }
 
+/* 購物車商品操作區域樣式 */
 .cart-item-actions {
-  display: flex;
-  align-items: center;
+  display: flex; /* 彈性布局 */
+  align-items: center; /* 垂直居中 */
 }
 
+/* 購物車商品數量調整按鈕樣式 */
 .cart-item-actions button {
-  background-color: #f0f0f0;
-  color: #333;
-  border: none;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1rem;
-  padding: 0;
-  transition: background-color 0.2s ease;
+  background-color: #f0f0f0; /* 淺灰色背景 */
+  color: #333; /* 深色文字 */
+  border: none; /* 無邊框 */
+  border-radius: 50%; /* 圓形按鈕 */
+  width: 25px; /* 寬度 */
+  height: 25px; /* 高度 */
+  display: flex; /* 彈性布局 */
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  cursor: pointer; /* 鼠標指針變為手型 */
+  font-size: 1rem; /* 字體大小 */
+  padding: 0; /* 移除內部間距 */
+  transition: background-color 0.2s ease; /* 背景色過渡效果 */
 }
 
+/* 購物車商品數量調整按鈕懸停效果 */
 .cart-item-actions button:hover {
-  background-color: #e0e0e0;
+  background-color: #e0e0e0; /* 深一點的灰色 */
 }
 
+/* 購物車商品數量顯示樣式 */
 .cart-item-actions span {
-  margin: 0 10px;
-  font-weight: 500;
+  margin: 0 10px; /* 左右間距 */
+  font-weight: 500; /* 字體粗細 */
 }
 
+/* 購物車總計區域樣式 */
 .cart-total {
-  margin-top: 20px;
-  text-align: right;
+  margin-top: 20px; /* 上方間距 */
+  text-align: right; /* 右對齊 */
 }
 
+/* 購物車總計金額樣式 */
 .cart-total p {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #2c3e50;
-  margin-bottom: 10px;
+  font-size: 1.2rem; /* 字體大小 */
+  font-weight: 600; /* 字體粗細 */
+  color: #2c3e50; /* 深色文字 */
+  margin-bottom: 10px; /* 底部間距 */
 }
 
+/* 結帳按鈕樣式 */
 .checkout-btn {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  width: 100%;
+  background-color: #4caf50; /* 綠色背景 */
+  color: white; /* 白色文字 */
+  border: none; /* 無邊框 */
+  border-radius: 25px; /* 圓角 */
+  padding: 10px 20px; /* 內部間距 */
+  cursor: pointer; /* 鼠標指針變為手型 */
+  font-weight: 500; /* 字體粗細 */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* 背景色和變換過渡效果 */
+  width: 100%; /* 寬度填滿容器 */
 }
 
+/* 結帳按鈕懸停效果 */
 .checkout-btn:hover {
-  background-color: #43a047;
-  transform: scale(1.02);
+  background-color: #43a047; /* 深一點的綠色 */
+  transform: scale(1.02); /* 輕微放大效果 */
 }
 
 /* 響應式設計 - 購物車相關 */
 @media (max-width: 768px) {
+  /* 在小屏幕上的購物車容器樣式 */
   .cart-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    border-radius: 12px 12px 0 0;
-    max-height: 80vh;
-    overflow-y: auto;
-    z-index: 1000;
+    position: fixed; /* 固定位置 */
+    bottom: 0; /* 靠底部 */
+    left: 0; /* 靠左側 */
+    right: 0; /* 靠右側 */
+    margin: 0; /* 移除外部間距 */
+    border-radius: 12px 12px 0 0; /* 只有上方圓角 */
+    max-height: 80vh; /* 最大高度為視窗高度的80% */
+    overflow-y: auto; /* 垂直方向可滾動 */
+    z-index: 1000; /* 確保在最上層 */
   }
   
+  /* 在小屏幕上的購物車商品項目樣式 */
   .cart-item {
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* 允許換行 */
   }
   
+  /* 在小屏幕上的購物車商品圖片樣式 */
   .cart-item-image {
-    width: 70px;
-    height: 70px;
+    width: 70px; /* 寬度 */
+    height: 70px; /* 高度 */
   }
   
+  /* 在小屏幕上的購物車商品信息樣式 */
   .cart-item-info {
-    width: calc(100% - 120px);
+    width: calc(100% - 120px); /* 寬度計算 */
   }
 }
