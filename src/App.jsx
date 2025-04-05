@@ -3,6 +3,8 @@ import './App.css'
 import './Cart.css'
 import { FaShoppingCart, FaMinus, FaPlus, FaTimes } from 'react-icons/fa'
 import productsData from './products.json'
+// 導入圖片目錄，使Vite能夠正確處理圖片資源
+import.meta.glob('./image/*.jpg', { eager: true })
 
 function App() {
   // 商品數據
@@ -104,8 +106,16 @@ function App() {
           <div className="products-grid">
             {filteredProducts.map(product => (
               <div key={product.barcode || product.name} className="product-card">
-                <div className="product-badge">{product.rating} ★</div>
-                <img src={product.image} alt={product.name} className="product-image" />
+                {product.rating && <div className="product-badge">{product.rating} ★</div>}
+                <img 
+                  src={product.image} 
+                  alt={product.name} 
+                  className="product-image" 
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = 'src/assets/react.svg'; // 設置一個默認圖片
+                  }}
+                />
                 <div className="product-content">
                   <h3>{product.name}</h3>
                   <p className="product-description">{product.description}</p>
@@ -139,7 +149,14 @@ function App() {
                 {cart.map(item => (
                   <li key={item.barcode || item.name} className="cart-item">
                     <div className="cart-item-image">
-                      <img src={item.image} alt={item.name} />
+                      <img 
+                        src={item.image} 
+                        alt={item.name} 
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = 'src/assets/react.svg';
+                        }}
+                      />
                     </div>
                     <div className="cart-item-info">
                       <h3>{item.name}</h3>
