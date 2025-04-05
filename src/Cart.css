@@ -219,35 +219,3 @@
   background-color: #43a047; /* 深一點的綠色 */
   transform: scale(1.02); /* 輕微放大效果 */
 }
-
-/* 響應式設計 - 購物車相關 */
-@media (max-width: 768px) {
-  /* 在小屏幕上的購物車容器樣式 */
-  .cart-container {
-    position: fixed; /* 固定位置 */
-    bottom: 0; /* 靠底部 */
-    left: 0; /* 靠左側 */
-    right: 0; /* 靠右側 */
-    margin: 0; /* 移除外部間距 */
-    border-radius: 12px 12px 0 0; /* 只有上方圓角 */
-    max-height: 80vh; /* 最大高度為視窗高度的80% */
-    overflow-y: auto; /* 垂直方向可滾動 */
-    z-index: 1000; /* 確保在最上層 */
-  }
-  
-  /* 在小屏幕上的購物車商品項目樣式 */
-  .cart-item {
-    flex-wrap: wrap; /* 允許換行 */
-  }
-  
-  /* 在小屏幕上的購物車商品圖片樣式 */
-  .cart-item-image {
-    width: 70px; /* 寬度 */
-    height: 70px; /* 高度 */
-  }
-  
-  /* 在小屏幕上的購物車商品信息樣式 */
-  .cart-item-info {
-    width: calc(100% - 120px); /* 寬度計算 */
-  }
-}

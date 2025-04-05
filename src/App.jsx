@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import './Cart.css'
+import './responsive.css'
 import { FaShoppingCart, FaMinus, FaPlus, FaTimes } from 'react-icons/fa'
 import productsData from './products.json'
 // 導入圖片目錄，使Vite能夠正確處理圖片資源
