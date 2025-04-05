@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import './Cart.css'
 import { FaShoppingCart, FaMinus, FaPlus, FaTimes } from 'react-icons/fa'
 import productsData from './products.json'
 
