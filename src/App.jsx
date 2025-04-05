@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { FaShoppingCart, FaMinus, FaPlus } from 'react-icons/fa'
+import { FaShoppingCart, FaMinus, FaPlus, FaTimes } from 'react-icons/fa'
 import productsData from './products.json'
 
 function App() {
@@ -24,6 +24,9 @@ function App() {
 
   // 購物車數據
   const [cart, setCart] = useState([])
+  
+  // 購物車顯示狀態
+  const [isCartVisible, setIsCartVisible] = useState(true)
   
   // 搜索關鍵詞
   const [searchTerm, setSearchTerm] = useState('')
@@ -87,6 +90,12 @@ function App() {
       </header>
 
       <div className="main-content">
+        {!isCartVisible && (
+          <div className="cart-toggle-button" onClick={() => setIsCartVisible(true)}>
+            <FaShoppingCart />
+            {cart.length > 0 && <span className="cart-badge">{cart.length}</span>}
+          </div>
+        )}
         <div className="products-container">
           <h2>商品列表</h2>
           <div className="products-grid">
@@ -110,11 +119,15 @@ function App() {
           </div>
         </div>
 
-        <div className="cart-container">
-          <div className="cart-header">
-            <FaShoppingCart className="cart-icon" />
-            <h2>購物車</h2>
-          </div>
+        {isCartVisible && (
+          <div className="cart-container">
+            <div className="cart-header">
+              <FaShoppingCart className="cart-icon" />
+              <h2>購物車</h2>
+              <button className="cart-close-btn" onClick={() => setIsCartVisible(false)}>
+                <FaTimes />
+              </button>
+            </div>
           {cart.length === 0 ? (
             <p>購物車是空的</p>
           ) : (
@@ -143,7 +156,8 @@ function App() {
               </div>
             </>
           )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   )
