@@ -44,11 +44,12 @@ function App() {
 
   // 添加商品到購物車
   const addToCart = (product) => {
-    const existingItem = cart.find(item => item.id === product.id)
+    const identifier = product.barcode || product.name
+    const existingItem = cart.find(item => (item.barcode || item.name) === identifier)
     
     if (existingItem) {
       setCart(cart.map(item => 
-        item.id === product.id 
+        (item.barcode || item.name) === identifier 
           ? { ...item, quantity: item.quantity + 1 } 
           : item
       ))
@@ -59,13 +60,14 @@ function App() {
 
   // 從購物車移除商品
   const removeFromCart = (productId) => {
-    const existingItem = cart.find(item => item.id === productId)
+    const identifier = productId
+    const existingItem = cart.find(item => (item.barcode || item.name) === identifier)
     
     if (existingItem.quantity === 1) {
-      setCart(cart.filter(item => item.id !== productId))
+      setCart(cart.filter(item => (item.barcode || item.name) !== identifier))
     } else {
       setCart(cart.map(item => 
-        item.id === productId 
+        (item.barcode || item.name) === identifier 
           ? { ...item, quantity: item.quantity - 1 } 
           : item
       ))
@@ -101,7 +103,7 @@ function App() {
           <h2>商品列表</h2>
           <div className="products-grid">
             {filteredProducts.map(product => (
-              <div key={product.id} className="product-card">
+              <div key={product.barcode || product.name} className="product-card">
                 <div className="product-badge">{product.rating} ★</div>
                 <img src={product.image} alt={product.name} className="product-image" />
                 <div className="product-content">
@@ -135,7 +137,7 @@ function App() {
             <>
               <ul className="cart-items">
                 {cart.map(item => (
-                  <li key={item.id} className="cart-item">
+                  <li key={item.barcode || item.name} className="cart-item">
                     <div className="cart-item-image">
                       <img src={item.image} alt={item.name} />
                     </div>
@@ -144,7 +146,7 @@ function App() {
                       <p>NT$ {item.price} x {item.quantity}</p>
                     </div>
                     <div className="cart-item-actions">
-                      <button onClick={() => removeFromCart(item.id)}><FaMinus /></button>
+                      <button onClick={() => removeFromCart(item.barcode || item.name)}><FaMinus /></button>
                       <span>{item.quantity}</span>
                       <button onClick={() => addToCart(item)}><FaPlus /></button>
                     </div>

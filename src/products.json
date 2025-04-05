@@ -1,66 +1,40 @@
 [
-  { 
-    "id": 1, 
-    "name": "筆記型電腦", 
-    "price": 30000, 
-    "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
-    "description": "高效能商務筆電，搭載最新處理器和高解析度螢幕",
-    "rating": 4.8
-  },
-  { 
-    "id": 2, 
-    "name": "智能手機", 
-    "price": 15000, 
-    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
-    "description": "最新旗艦智能手機，配備高畫質相機和長效電池",
-    "rating": 4.7
-  },
-  { 
-    "id": 3, 
-    "name": "無線耳機", 
-    "price": 2000, 
-    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    "description": "高音質無線耳機，具備主動降噪功能和長效電池",
-    "rating": 4.5
-  },
-  { 
-    "id": 4, 
-    "name": "無線滑鼠", 
-    "price": 800, 
-    "image": "https://images.unsplash.com/photo-1605773527852-c546a8584ea3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-    "description": "人體工學設計無線滑鼠，精準定位和舒適握感",
-    "rating": 4.3
-  },
-  { 
-    "id": 5, 
-    "name": "機械鍵盤", 
-    "price": 1200, 
-    "image": "https://images.unsplash.com/photo-1595225476474-57ff36594559?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
-    "description": "RGB背光機械鍵盤，提供絕佳打字體驗和遊戲性能",
-    "rating": 4.6
-  },
-  { 
-    "id": 6, 
-    "name": "曲面顯示器", 
-    "price": 8000, 
-    "image": "https://images.unsplash.com/photo-1616763355548-1b606f439f86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    "description": "27吋曲面顯示器，高刷新率和廣色域，適合專業設計和遊戲",
-    "rating": 4.9
-  },
-  { 
-    "id": 7, 
-    "name": "智能手錶", 
-    "price": 5500, 
-    "image": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
-    "description": "多功能智能手錶，支援健康監測和運動追蹤",
-    "rating": 4.4
-  },
-  { 
-    "id": 8, 
-    "name": "藍牙音箱", 
-    "price": 1800, 
-    "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1036&q=80",
-    "description": "便攜式防水藍牙音箱，音質清晰且電池續航力強",
-    "rating": 4.2
-  }
+    {
+        "name": "CIAO CozyLife貓用餐包-鰹魚&雞肉 40g",
+        "image": "db501abb-810c-4384-802e-fe83f76264d7.jpg",
+        "price": "30",
+        "barcode": "4901133580215",
+        "description": "",
+        "specialOffers": {
+            "1": 30
+        }
+    },
+    {
+        "name": "CIAO貓用罐-鰹魚雞胸干貝風味 85g",
+        "image": "fcc7bf60-91d1-4c72-86b1-86c4291acd37.jpg",
+        "price": "39",
+        "barcode": "4901133061264",
+        "description": "",
+        "specialOffers": {
+            "1": 39
+        }
+    },
+    {
+        "name": "《預購》Apple iPhone 16 Pro Max( 1TB / 6.3吋 )",
+        "image": "sg-11134201-7rd5o-m7t1j39fmccj47@resize_w82_nl.jpg",
+        "price": "58900",
+        "barcode": "",
+        "description": "",
+        "attribute": "phone",
+        "link": "https://s.shopee.tw/8pXzaKyxd3"
+    },
+    {
+        "name": "Apple iPhone 16 Pro Max (512G / 6.9吋 )",
+        "image": "tw-11134207-7rasg-m5k77hg1ps5p7d.jpg",
+        "price": "49900",
+        "barcode": "",
+        "description": "",
+        "attribute": "phone",
+        "link": "https://s.shopee.tw/4VP0RSsBNK"
+    }
 ]
