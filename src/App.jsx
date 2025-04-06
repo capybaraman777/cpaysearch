@@ -108,12 +108,12 @@ function App() {
               <div key={product.barcode || product.name} className="product-card">
                 {product.rating && <div className="product-badge">{product.rating} ★</div>}
                 <img 
-                  src={product.image} 
+                   src={`/cpaysearch/${product.image}`} 
                   alt={product.name} 
                   className="product-image" 
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = 'public/vite.svg'; // 設置一個默認圖片，使用public目錄下的圖片
+                    e.target.src = '/cpaysearch/vite.svg'; // ✅ 加上 repo 名作為 base path
                   }}
                 />
                 <div className="product-content">
