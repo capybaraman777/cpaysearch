@@ -4,8 +4,7 @@ import './Cart.css'
 import './responsive.css'
 import { FaShoppingCart, FaMinus, FaPlus, FaTimes } from 'react-icons/fa'
 import productsData from './products.json'
-// 導入圖片目錄，使Vite能夠正確處理圖片資源
-import.meta.glob('./image/*.jpg', { eager: true })
+// 使用public目錄下的圖片，GitHub Pages可以正確讀取
 
 function App() {
   // 商品數據
@@ -114,7 +113,7 @@ function App() {
                   className="product-image" 
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = 'src/assets/react.svg'; // 設置一個默認圖片
+                    e.target.src = '/cpaysearch/vite.svg'; // 設置一個默認圖片，使用public目錄下的圖片
                   }}
                 />
                 <div className="product-content">
@@ -155,7 +154,7 @@ function App() {
                         alt={item.name} 
                         onError={(e) => {
                           e.target.onerror = null;
-                          e.target.src = 'src/assets/react.svg';
+                          e.target.src = '/cpaysearch/vite.svg';
                         }}
                       />
                     </div>
