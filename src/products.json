@@ -1,7 +1,7 @@
 [
     {
         "name": "CIAO CozyLife貓用餐包-鰹魚&雞肉 40g",
-        "image": "/cpaysearch/public/image/db501abb-810c-4384-802e-fe83f76264d7.jpg",
+        "image": "/image/db501abb-810c-4384-802e-fe83f76264d7.jpg",
         "price": "30",
         "barcode": "4901133580215",
         "description": "",
@@ -11,7 +11,7 @@
     },
     {
         "name": "CIAO貓用罐-鰹魚雞胸干貝風味 85g",
-        "image": "/cpaysearch/image/fcc7bf60-91d1-4c72-86b1-86c4291acd37.jpg",
+        "image": "/image/fcc7bf60-91d1-4c72-86b1-86c4291acd37.jpg",
         "price": "39",
         "barcode": "4901133061264",
         "description": "",
@@ -21,7 +21,7 @@
     },
     {
         "name": "《預購》Apple iPhone 16 Pro Max( 1TB / 6.3吋 )",
-        "image": "/cpaysearch/image/sg-11134201-7rd5o-m7t1j39fmccj47@resize_w82_nl.jpg",
+        "image": "/image/sg-11134201-7rd5o-m7t1j39fmccj47@resize_w82_nl.jpg",
         "price": "58900",
         "barcode": "",
         "description": "",
@@ -30,7 +30,7 @@
     },
     {
         "name": "Apple iPhone 16 Pro Max (512G / 6.9吋 )",
-        "image": "/cpaysearch/image/tw-11134207-7rasg-m5k77hg1ps5p7d.jpg",
+        "image": "/image/tw-11134207-7rasg-m5k77hg1ps5p7d.jpg",
         "price": "49900",
         "barcode": "",
         "description": "",
