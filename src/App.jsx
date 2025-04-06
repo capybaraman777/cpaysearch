@@ -150,11 +150,11 @@ function App() {
                   <li key={item.barcode || item.name} className="cart-item">
                     <div className="cart-item-image">
                       <img 
-                        src={item.image} 
-                        alt={item.name} 
+                   src={`/cpaysearch/${product.image}`} 
+                   alt={item.name} 
                         onError={(e) => {
                           e.target.onerror = null;
-                          e.target.src = 'public/vite.svg';
+                          e.target.src = '/cpaysearch/vite.svg'; // ✅ 加上 repo 名作為 base path
                         }}
                       />
                     </div>
