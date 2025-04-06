@@ -113,7 +113,7 @@ function App() {
                   className="product-image" 
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = '/cpaysearch/vite.svg'; // 設置一個默認圖片，使用public目錄下的圖片
+                    e.target.src = 'public/vite.svg'; // 設置一個默認圖片，使用public目錄下的圖片
                   }}
                 />
                 <div className="product-content">
@@ -154,7 +154,7 @@ function App() {
                         alt={item.name} 
                         onError={(e) => {
                           e.target.onerror = null;
-                          e.target.src = '/cpaysearch/vite.svg';
+                          e.target.src = 'public/vite.svg';
                         }}
                       />
                     </div>
