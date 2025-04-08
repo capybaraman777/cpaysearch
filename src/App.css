@@ -190,3 +190,10 @@
   color: #cc0000;
   border: 1px solid #ffcccc;
 }
+
+
+/* 購物車樣式 */
+.cart-container {
+  max-width: 350px;
+  width: 100%;
+}
