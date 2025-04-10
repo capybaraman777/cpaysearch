@@ -14,7 +14,7 @@
   
   .header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-center;
   }
   
   .search-container {
@@ -33,15 +33,16 @@
 @media (max-width: 768px) {
   /* 在小屏幕上的購物車容器樣式 */
   .cart-container {
-    position: fixed; /* 固定位置 */
-    bottom: 0; /* 靠底部 */
-    left: 0; /* 靠左側 */
-    right: 0; /* 靠右側 */
-    margin: 0; /* 移除外部間距 */
-    border-radius: 12px 12px 0 0; /* 只有上方圓角 */
-    max-height: 80vh; /* 最大高度為視窗高度的80% */
-    overflow-y: auto; /* 垂直方向可滾動 */
-    z-index: 1000; /* 確保在最上層 */
+    position: fixed;
+    top: 20px; /* 或 bottom: 0 根據你要它出現的位置 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px; /* 固定寬度才能準確置中 */
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    border-radius: 12px;
   }
   
   /* 在小屏幕上的購物車商品項目樣式 */
@@ -51,12 +52,21 @@
   
   /* 在小屏幕上的購物車商品圖片樣式 */
   .cart-item-image {
-    width: 70px; /* 寬度 */
-    height: 70px; /* 高度 */
+    width: 80px; /* 寬度 */
+    height: 80px; /* 高度 */
   }
   
   /* 在小屏幕上的購物車商品信息樣式 */
   .cart-item-info {
-    width: calc(100% - 120px); /* 寬度計算 */
+    width: 100%; /* 或 90%、95% */
+    white-space: normal;         /* ✅ 允許換行 */
+    word-break: break-word;      /* ✅ 單字太長也能斷行 */
+    overflow-wrap: break-word;   /* ✅ 更保險的自動換行 */
+    font-size: 16px;
+    line-height: 1.4;
+    overflow: visible;           /* ❗️關鍵：不隱藏內容 */
+    text-overflow: unset;        /* ❗️關鍵：不要「...」 */
   }
+  
+  
 }

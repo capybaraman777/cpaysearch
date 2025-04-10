@@ -30,27 +30,35 @@ function Cart({ cart, setCart, isCartVisible, setIsCartVisible, addToCart, remov
             <>
               <ul className="cart-items">
                 {cart.map(item => (
-                  <li key={item.barcode || item.name} className="cart-item">
-                    <div className="cart-item-image">
-                      <img 
-                        src={`/cpaysearch/${item.image}`} 
-                        alt={item.name} 
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src = '/cpaysearch/vite.svg';
-                        }}
-                      />
-                    </div>
-                    <div className="cart-item-info">
-                      <h3>{item.name}</h3>
-                      <p>NT$ {item.price} x {item.quantity}</p>
-                    </div>
-                    <div className="cart-item-actions">
-                      <button onClick={() => removeFromCart(item.barcode || item.name)}><FaMinus /></button>
-                      <span>{item.quantity}</span>
-                      <button onClick={() => addToCart(item)}><FaPlus /></button>
-                    </div>
-                  </li>
+                 <li key={item.barcode || item.name} className="cart-item">
+                 <div className="cart-item-image">
+                   <img
+                     src={`/cpaysearch/${item.image}`}
+                     alt={item.name}
+                     onError={(e) => {
+                       e.target.onerror = null;
+                       e.target.src = '/cpaysearch/vite.svg';
+                     }}
+                   />
+                 </div>
+                 <div className="cart-item-details">
+                   <div className="cart-item-info">
+                     <h3>{item.name}</h3>
+                     <p>單價: ${item.price}</p>
+                   </div>
+                   <div className="cart-item-quantity">
+                     <button onClick={() => removeFromCart(item.barcode || item.name)}><FaMinus /></button>
+                     <span>{item.quantity}</span>
+                     <button onClick={() => addToCart(item)}><FaPlus /></button>
+                     <button className="delete-btn" onClick={() => removeFromCart(item.barcode || item.name)}>刪除</button>
+                   </div>
+                   <div className="cart-item-subtotal">
+                     <br></br>小計: <strong>${(item.price * item.quantity).toFixed(2)}</strong>
+                     <button className="edit-btn">修改</button>
+                     
+                   </div>
+                 </div>
+               </li>
                 ))}
               </ul>
               <div className="cart-total">

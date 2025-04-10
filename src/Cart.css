@@ -14,9 +14,9 @@
 /* 購物車頭部區域樣式 */
 .cart-header {
   display: flex; /* 彈性布局 */
-  align-items: center; /* 垂直居中對齊 */
   margin-bottom: 15px; /* 底部間距 */
   position: relative; /* 相對定位，用於關閉按鈕定位 */
+  align-items: baseline;
 }
 
 /* 購物車圖標樣式 */
@@ -24,6 +24,7 @@
   font-size: 1.5rem; /* 圖標大小 */
   color: #646cff; /* 主題藍色 */
   margin-right: 10px; /* 右側間距 */
+  transform: scaleX(-1); /* ⬅️ 水平翻轉 */
 }
 
 /* 購物車標題樣式 */
@@ -106,53 +107,84 @@
 
 /* 購物車單個商品項目樣式 */
 .cart-item {
-  display: flex; /* 彈性布局 */
-  justify-content: space-between; /* 兩端對齊 */
-  align-items: center; /* 垂直居中 */
-  padding: 10px 0; /* 上下內部間距 */
-  border-bottom: 1px solid #e0e0e0; /* 底部邊框 */
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+  align-items: flex-start;
 }
 
 /* 購物車商品圖片容器樣式 */
 .cart-item-image {
-  width: 70px; /* 寬度 */
-  height: 70px; /* 高度 */
-  margin-right: 10px; /* 右側間距 */
-  border-radius: 5px; /* 圓角 */
-  overflow: hidden; /* 隱藏溢出部分 */
-  flex-shrink: 0; /* 防止圖片被壓縮 */
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
 }
 
 /* 購物車商品圖片樣式 */
 .cart-item-image img {
-  width: 100%; /* 寬度填滿容器 */
-  height: 100%; /* 高度填滿容器 */
-  object-fit: cover; /* 保持圖片比例並填滿容器 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.cart-item-details {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex-direction: column
+
+
 }
 
 /* 購物車商品信息樣式 */
 .cart-item-info {
-  flex-grow: 1; /* 佔據剩餘空間 */
-  margin-right: 10px; /* 右側間距 */
+  width: 100%;
+
+  white-space: normal !important;     /* ✅ 允許換行（解除 nowrap） */
+  word-break: break-word;
+  overflow-wrap: break-word;
+
+  overflow: visible !important;       /* ✅ 不隱藏文字 */
+  text-overflow: unset !important;    /* ✅ 不使用 ... */
+  
+  text-align: left;                   /* ✅ 避免中間對齊太擠 */
+  font-size: 16px;
+  line-height: 1.4;
+  flex: 1; 
 }
 
 /* 購物車商品標題樣式 */
 .cart-item-info h3 {
-  margin: 0; /* 移除外部間距 */
-  font-size: 1rem; /* 字體大小 */
-  color: #2c3e50; /* 深色文字 */
-  white-space: nowrap; /* 不換行 */
-  overflow: hidden; /* 隱藏溢出部分 */
-  text-overflow: ellipsis; /* 溢出顯示省略號 */
+  margin: 0;
+  font-size: 16px;
+  margin: 0 0 4px;
+  line-height: 1.3;
+  color: #2c3e50;
+  
+  white-space: normal;           /* ✅ 允許自動換行 */
+  word-break: break-word;        /* ✅ 長單字也會斷行 */
+  overflow-wrap: break-word;     /* ✅ 額外保險的換行處理 */
+  
+  overflow: visible;             /* ✅ 不隱藏內容 */
+  text-overflow: unset;          /* ✅ 不使用省略號 */
 }
 
 /* 購物車商品價格樣式 */
 .cart-item-info p {
-  margin: 5px 0 0; /* 上方間距 */
+  margin: 0;
+  color: #666;
   font-size: 0.9rem; /* 字體大小 */
-  color: #646cff; /* 主題藍色 */
 }
-
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
 /* 購物車商品操作區域樣式 */
 .cart-item-actions {
   display: flex; /* 彈性布局 */
@@ -218,4 +250,61 @@
 .checkout-btn:hover {
   background-color: #43a047; /* 深一點的綠色 */
   transform: scale(1.02); /* 輕微放大效果 */
+}
+.cart-item-quantity button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+}
+.cart-item-quantity span {
+  font-size: 16px;
+  font-weight: bold;
+}
+.cart-item-subtotal {
+  text-align: right;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 10px;
+  flex: 1 1 70px;
+}
+.cart-item-subtotal p {
+  font-weight: bold;
+  margin: 0;
+}
+.edit-btn {
+  border: 1px solid #333;
+  background-color: white;
+  color: #333;
+}
+
+.edit-btn {
+  padding: 4px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 4px;
+}
+.cart-item-quantity .delete-btn {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 3px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 60px;
+  font-weight: bold;
+  
+}
+.cart-item-subtotal .edit-btn {
+  padding: 3px 8px;
 }
