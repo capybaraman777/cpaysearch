@@ -111,7 +111,7 @@
   /* object-fit: cover; */
   object-fit: contain;
   border-bottom: 1px solid #f0f0f0;
-  transition: transform 0.5s ease;
+  transition: transform 0.1s ease;
 }
 
 .product-card:hover .product-image {

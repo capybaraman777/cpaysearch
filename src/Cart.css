@@ -1,78 +1,78 @@
 /* 購物車樣式 - 整體容器設定 */
 .cart-container {
-  background-color: #f9f9f9; /* 淺灰色背景 */
-  border-radius: 12px; /* 圓角邊框 */
-  padding: 20px; /* 內部間距 */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* 輕微陰影效果 */
-  height: fit-content; /* 高度自適應內容 */
-  position: sticky; /* 固定位置，但可隨頁面滾動 */
-  top: 20px; /* 距離頂部20px */
-  right: 0; /* 靠右對齊 */
-  z-index: 100; /* 確保在其他元素上方 */
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 360px;
+  max-width: 90vw;
+  height: 90vh;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
 }
 
-/* 購物車頭部區域樣式 */
+/* ================= 標頭區域 ================= */
 .cart-header {
-  display: flex; /* 彈性布局 */
-  margin-bottom: 15px; /* 底部間距 */
-  position: relative; /* 相對定位，用於關閉按鈕定位 */
-  align-items: baseline;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 /* 購物車圖標樣式 */
 .cart-icon {
-  font-size: 1.5rem; /* 圖標大小 */
-  color: #646cff; /* 主題藍色 */
-  margin-right: 10px; /* 右側間距 */
-  transform: scaleX(-1); /* ⬅️ 水平翻轉 */
+  font-size: 1.5rem;
+  color: #646cff;
+  margin-right: 10px;
+  transform: scaleX(-1);
 }
 
 /* 購物車標題樣式 */
 .cart-container h2 {
-  font-size: 1.5rem; /* 字體大小 */
-  margin-bottom: 0; /* 移除底部間距 */
-  color: #2c3e50; /* 深色文字 */
-  text-align: left; /* 左對齊 */
-  font-weight: 600; /* 字體粗細 */
+  font-size: 1.5rem;
+  color: #2c3e50;
+  font-weight: 600;
+  margin: 0;
 }
 
 /* 購物車關閉按鈕樣式 */
 .cart-close-btn {
-  position: absolute; /* 絕對定位 */
-  right: 0; /* 靠右對齊 */
-  top: 0; /* 靠頂對齊 */
-  background: none; /* 無背景 */
-  border: none; /* 無邊框 */
-  color: #666; /* 灰色文字 */
-  font-size: 1.2rem; /* 字體大小 */
-  cursor: pointer; /* 鼠標指針變為手型 */
-  padding: 5px; /* 內部間距 */
-  transition: color 0.3s ease; /* 顏色過渡效果 */
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 /* 購物車關閉按鈕懸停效果 */
 .cart-close-btn:hover {
-  color: #646cff; /* 懸停時變為主題藍色 */
+  color: #646cff;
 }
 
 /* 購物車切換按鈕樣式 - 用於移動端顯示/隱藏購物車 */
 .cart-toggle-button {
-  position: fixed; /* 固定在視窗中 */
-  bottom: 20px; /* 距離底部20px */
-  right: 20px; /* 距離右側20px */
-  width: 50px; /* 寬度 */
-  height: 50px; /* 高度 */
-  border-radius: 50%; /* 圓形按鈕 */
-  background-color: #646cff; /* 主題藍色背景 */
-  color: white; /* 白色文字 */
-  display: flex; /* 彈性布局 */
-  align-items: center; /* 垂直居中 */
-  justify-content: center; /* 水平居中 */
-  cursor: pointer; /* 鼠標指針變為手型 */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 陰影效果 */
-  transition: transform 0.3s ease, background-color 0.3s ease; /* 變換和背景色過渡效果 */
-  z-index: 1000; /* 確保在最上層 */
-  font-size: 1.5rem; /* 字體大小 */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #646cff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 1001;
 }
 
 /* 購物車切換按鈕懸停效果 */

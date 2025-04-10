@@ -34,15 +34,17 @@
   /* 在小屏幕上的購物車容器樣式 */
   .cart-container {
     position: fixed;
-    top: 20px; /* 或 bottom: 0 根據你要它出現的位置 */
+    top: 0;
+    right: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 350px; /* 固定寬度才能準確置中 */
+    width: 100vw;
+    height: 95vh;
     background-color: #f9f9f9;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     z-index: 1000;
-    border-radius: 12px;
+    border-radius: 0;
   }
   
   /* 在小屏幕上的購物車商品項目樣式 */

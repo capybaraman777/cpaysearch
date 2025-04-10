@@ -30,7 +30,7 @@ function App() {
   const [cart, setCart] = useState([])
   
   // 購物車顯示狀態
-  const [isCartVisible, setIsCartVisible] = useState(true)
+  const [isCartVisible, setIsCartVisible] = useState(false)
   
   // 搜索關鍵詞
   const [searchTerm, setSearchTerm] = useState('')
@@ -84,13 +84,15 @@ function App() {
       <header className="header">
         <h1>購物網站</h1>
         <div className="search-container">
-          <input 
-            type="text" 
-            placeholder="搜尋商品..." 
-            value={searchTerm} 
-            onChange={handleSearch} 
-            className="search-input"
-          />
+         <input 
+  type="text" 
+  id="search" 
+  name="search" 
+  placeholder="搜尋商品..." 
+  value={searchTerm} 
+  onChange={handleSearch} 
+  className="search-input"
+/>
         </div>
       </header>
 
