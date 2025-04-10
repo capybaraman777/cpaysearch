@@ -7,18 +7,38 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# System files
+.DS_Store
+
+# Dependency folders
+node_modules/
+dist/
+dist-ssr/
 *.local
 
-# Editor directories and files
-.vscode/*
+# Editor folders
+.vscode/
 !.vscode/extensions.json
-.idea
-.DS_Store
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Git 忽略圖片資源，避免誤傳
+public/image/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.svg
+
+# Optional: 忽略環境檔（如果你有）
+.env
+.env.*.local
+
+# Optional: 打包分析報告
+stats.html
+*.report.html
